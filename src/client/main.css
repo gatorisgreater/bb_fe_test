@@ -1,0 +1,29 @@
+body {
+  background-image: url("../../assets/background.jpg");
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+}
+
+.header-logo {
+  display: block;
+  padding: 20px;
+  background-color: #FFF;
+}
+
+.content{
+  padding: 10px;
+}
+
+.transfer-money-container {
+  background-color: #FFF;
+  padding: 0;
+  display: inline-block;
+}
+
+.transaction-history-container {
+  background-color: #FFF;
+  padding: 0;
+  display: inline-block;
+}
+
+
