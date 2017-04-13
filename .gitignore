@@ -1,1 +1,15 @@
+# dependencies
 node_modules
+
+# build
+src/client/public
+
+#DS_store
+.DS_Store
+
+#logs
+*.log
+
+JSON file
+transactions.json
+
