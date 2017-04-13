@@ -10,7 +10,7 @@ function TransferMoney() {
           <form className="transfer-money-form">
           <div className="from-account">
           <label>FROM ACCOUNT</label>
-          <p>Free Checking(4692) - Available </p>
+          <p>Free Checking(4692) - Available $5824.76</p>
           </div>
           <div className="to-account">
           <label>TO ACCOUNT</label>
@@ -25,5 +25,7 @@ function TransferMoney() {
         </div>
       );
 }
+
+
 
 export default TransferMoney;
