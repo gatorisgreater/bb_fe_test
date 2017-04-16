@@ -12,7 +12,8 @@ export default function reducer (state=initialState, action) {
 	case actions.TRANSFER_MONEY :
 		let amount = action.amount;
 		let merchant = action.merchant;
-		state = Object.assign({}, state, {transactionHistory: state.transactionHistory.concat({amount: amount, merchant: merchant})});
+		let balanceMinusTransfer = state.availableBalance - amount;
+		state = Object.assign({}, state, {availableBalance: balanceMinusTransfer, transactionHistory: state.transactionHistory.concat({amount: amount, merchant: merchant})});
 		return state;
 		break;
 	
