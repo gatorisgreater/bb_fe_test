@@ -26,4 +26,9 @@ body {
   display: inline-block;
 }
 
+label, input {
+  display: block;
+  width: 90%;
+}
+
 
