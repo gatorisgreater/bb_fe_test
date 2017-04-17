@@ -31,4 +31,19 @@ label, input {
   width: 90%;
 }
 
+select {
+  -webkit-appearance:none;
+}
 
+.jumbrotron {
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 500;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
