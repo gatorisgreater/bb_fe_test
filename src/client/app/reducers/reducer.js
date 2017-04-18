@@ -6,7 +6,7 @@ export const initialState = {
 }
 
 
-export default function reducer (state=initialState, action) {
+export default function transferReducer (state=initialState, action) {
 	
 	switch(action.type) {
 	case actions.TRANSFER_MONEY :

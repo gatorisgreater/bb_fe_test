@@ -1,6 +1,9 @@
 import React from 'react';
 import Modal from './modal';
 
+import {connect} from 'react-redux';
+
+import * as actions from '../actions/actions';
 
 class TransferMoney extends React.Component {
 	constructor(props) {
@@ -26,6 +29,7 @@ class TransferMoney extends React.Component {
 
 	submitTransferAmount(event) {
 		event.preventDefault();
+		this.props.dispatch(actions.transferMoney(this.state.merchant, this.state.transferAmount))
 		console.log(event);
 		console.log(this.state.merchant);
 		console.log(this.state.transferAmount);	
@@ -49,7 +53,7 @@ class TransferMoney extends React.Component {
 			merchant.length > 0 &&
 			transferAmount > 0;
 
-		let availableBalance = 5824.76;
+		let availableBalance = this.props.availableBalance;
 
 			return (
 		        <div className="transfer-money-container" >
@@ -91,4 +95,10 @@ class TransferMoney extends React.Component {
 
 }
 
-export default TransferMoney;
+const mapStateToProps = (state, props) => {
+	return {
+		availableBalance: state.availableBalance
+	}
+}
+
+export default connect(mapStateToProps)(TransferMoney);
