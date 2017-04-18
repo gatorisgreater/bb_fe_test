@@ -40,14 +40,14 @@ class TransferMoney extends React.Component {
 		this.setState({modalOpen: false});			
 	}
 
-	  _openModal(event) {
+	_openModal(event) {
 	  	event.preventDefault();
-    this.setState({modalOpen: true});
-  }
+    	this.setState({modalOpen: true});
+  	}
 
-  _closeModal() {
-    this.setState({modalOpen: false});
-  }
+  	_closeModal() {
+    	this.setState({modalOpen: false});
+  	}
 
 	render() {
 
@@ -62,41 +62,40 @@ class TransferMoney extends React.Component {
 			return (
 		        <div className="transfer-money-container" >
 		          <header className="transfer-money-header">
-		          <img src="../../assets/icons/arrows.png" />
-		          <h2>Make a Transfer</h2>
+			          <img src="../../assets/icons/arrows.png" alt="Transfer Money Icon" />
+			          <h2>Make a Transfer</h2>
 		          </header>
+
 		          <form className="transfer-money-form" onSubmit={this._openModal.bind(this)} >
-		          <div className="from-account">
-		          <label>FROM ACCOUNT</label>
-		          <select disabled>
-		          <option>Free Checking(4692) - Available ${availableBalance}</option>
-		          </select>
-		          </div>
-		          <div className="to-account">
-		          <label>TO ACCOUNT</label>
-		          <input type="text" placeholder="Georgia Power Electric Company" value={this.state.merchant} onChange={this.handleMerchantChange} required />
-		          </div>
-		          <div className="transfer-amount">
-		          <label>AMOUNT</label>
-		          <input type="number" placeholder="$0.00" value={this.state.transerAmount} onChange={this.handleTransferChange} required />
-		          </div>
-		          <button type="submit" name="submit transfer money" value="SUBMIT" disabled={!isEnabled} >SUBMIT </button>
+			          <div className="from-account">
+				          <label htmlFor="from-account">FROM ACCOUNT</label>
+				          <select id="from-account" disabled>
+				          <option>Free Checking(4692) - Available ${availableBalance}</option>
+				          </select>
+				      </div>
+				      
+				      <div className="to-account">
+				          <label htmlFor="to-account">TO ACCOUNT</label>
+				          <input id="to-account" type="text" placeholder="Georgia Power Electric Company" value={this.state.merchant} onChange={this.handleMerchantChange} required />
+			          </div>
 
-           {/* Only show Modal when "this.state.modalOpen === true" */}
-        {modalOpen 
-          ? <Modal submitTransferAmount={this.submitTransferAmount} closeModal={this._closeModal.bind(this)} />
-          : ''}
+			          <div className="transfer-amount">
+				          <label htmlFor="transfer-amount">AMOUNT</label>
+				          <input id="transfer-amount" type="number" placeholder="$0.00" value={this.state.transerAmount} onChange={this.handleTransferChange} required />
+			          </div>
+			          
+			          <button className="submit-button" type="submit" name="submit transfer money" value="SUBMIT" disabled={!isEnabled} >SUBMIT </button>
 
+			           {/* Only show Modal when "this.state.modalOpen === true" */}
+				        {modalOpen 
+				          ? <Modal submitTransferAmount={this.submitTransferAmount} closeModal={this._closeModal.bind(this)} merchant={merchant} transferAmount={transferAmount} />
+				          : ''}
 
 		          </form>
 
-
-
 		        </div>
-		      );
-
+		    );
 	}
-
 }
 
 const mapStateToProps = (state, props) => {

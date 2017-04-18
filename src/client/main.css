@@ -1,5 +1,6 @@
 body {
   background-image: url("../../assets/background.jpg");
+  background-size: auto;
   font-family: 'Kanit', sans-serif;
   margin: 0;
 }
@@ -16,15 +17,23 @@ body {
 
 .transfer-money-container {
   background-color: #FFF;
-  padding: 0;
+  margin-left: 5%;
   display: inline-block;
-  width: 300px;
+  width: 32.5%;
+  float: left;
+}
+
+.transfer-money-header, .transaction-history-header {
+  background-color: #0C8397;
+  color: #FFF;
 }
 
 .transaction-history-container {
   background-color: #FFF;
-  padding: 0;
+  margin-right: 5%;
   display: inline-block;
+  float: right;
+  width: 55%;
 }
 
 img.transaction-image {
@@ -52,4 +61,8 @@ select {
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+ul.transaction-history-list {
+  list-style: none;
 }
