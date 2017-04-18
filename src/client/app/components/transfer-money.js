@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from './modal';
 
 import {connect} from 'react-redux';
+import moment from 'moment';
 
 import * as actions from '../actions/actions';
 
@@ -29,8 +30,11 @@ class TransferMoney extends React.Component {
 
 	submitTransferAmount(event) {
 		event.preventDefault();
-		this.props.dispatch(actions.transferMoney(this.state.merchant, this.state.transferAmount))
+		let date = moment().format('MMM D');
+
+		this.props.dispatch(actions.transferMoney(this.state.merchant, this.state.transferAmount, date))
 		console.log(event);
+		console.log(date);
 		console.log(this.state.merchant);
 		console.log(this.state.transferAmount);	
 		this.setState({modalOpen: false});			

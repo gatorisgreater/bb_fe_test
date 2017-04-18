@@ -27,6 +27,11 @@ body {
   display: inline-block;
 }
 
+img.transaction-image {
+  width: 10%;
+  height: auto;
+}
+
 label, input {
   display: block;
   width: 90%;

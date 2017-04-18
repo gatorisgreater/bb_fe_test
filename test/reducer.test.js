@@ -19,10 +19,9 @@ describe('PeachTree Bank SPA', () => {
 
         it("should handle TRANSFER MONEY action",  () => {
             expect(
-             reducer(undefined, {type: actions.TRANSFER_MONEY, merchant: "Buffalo Wild Wings", amount: 45.55})
-             ).toEqual({availableBalance: 5779.21, transactionHistory:[{merchant: "Buffalo Wild Wings", amount: 45.55}]})
+             reducer(undefined, {type: actions.TRANSFER_MONEY, merchant: "Buffalo Wild Wings", amount: 45.55, date: "Apr 18"})
+             ).toEqual({availableBalance: 5779.21, transactionHistory:[{merchant: "Buffalo Wild Wings", amount: 45.55, date: "Apr 18"}]})
         });
-
-
+ 
     });
 })        
