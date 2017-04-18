@@ -28,10 +28,12 @@ class TransferMoney extends React.Component {
 		event.preventDefault();
 		console.log(event);
 		console.log(this.state.merchant);
-		console.log(this.state.transferAmount);		
+		console.log(this.state.transferAmount);	
+		this.setState({modalOpen: false});			
 	}
 
-	  _openModal() {
+	  _openModal(event) {
+	  	event.preventDefault();
     this.setState({modalOpen: true});
   }
 
@@ -55,7 +57,7 @@ class TransferMoney extends React.Component {
 		          <img src="../../assets/icons/arrows.png" />
 		          <h2>Make a Transfer</h2>
 		          </header>
-		          <form className="transfer-money-form" onSubmit={this.submitTransferAmount}>
+		          <form className="transfer-money-form" onSubmit={this._openModal.bind(this)} >
 		          <div className="from-account">
 		          <label>FROM ACCOUNT</label>
 		          <select disabled>
@@ -70,11 +72,11 @@ class TransferMoney extends React.Component {
 		          <label>AMOUNT</label>
 		          <input type="number" placeholder="$0.00" value={this.state.transerAmount} onChange={this.handleTransferChange} required />
 		          </div>
-		          <button type="submit" name="submit transfer money" value="SUBMIT" onClick={this._openModal.bind(this)} disabled={!isEnabled} >SUBMIT </button>
+		          <button type="submit" name="submit transfer money" value="SUBMIT" disabled={!isEnabled} >SUBMIT </button>
 
            {/* Only show Modal when "this.state.modalOpen === true" */}
         {modalOpen 
-          ? <Modal closeModal={this._closeModal.bind(this)} />
+          ? <Modal submitTransferAmount={this.submitTransferAmount} closeModal={this._closeModal.bind(this)} />
           : ''}
 
 
