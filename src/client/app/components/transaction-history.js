@@ -23,7 +23,7 @@ class TransactionHistory extends React.Component {
         
           <div className="transaction-history-header">
             <img src="../../assets/icons/briefcase.png" alt="Transaction History Icon" />
-              <h2>Recent Transactions</h2>
+              <span>Recent Transactions</span>
           </div>
           
           <ul className="transaction-history-list">

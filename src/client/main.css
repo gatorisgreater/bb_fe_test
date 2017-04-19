@@ -1,6 +1,6 @@
 body {
   background-image: url("../../assets/background.jpg");
-  background-size: auto;
+  background-size: 130%;
   font-family: 'Kanit', sans-serif;
   margin: 0;
 }
@@ -11,7 +11,12 @@ body {
   background-color: #FFF;
 }
 
+img.header-logo {
+  padding-left: : 5%;
+}
+
 .content{
+  margin-top: 2%;
   padding: 10px;
 }
 
@@ -34,6 +39,8 @@ body {
   display: inline-block;
   float: right;
   width: 55%;
+  height: auto;
+  margin-bottom: 2%;
 }
 
 img.transaction-image {
@@ -41,7 +48,7 @@ img.transaction-image {
   height: auto;
 }
 
-label, input {
+label, input, select {
   display: block;
   width: 90%;
 }

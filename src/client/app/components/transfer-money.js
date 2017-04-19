@@ -63,7 +63,7 @@ class TransferMoney extends React.Component {
 		        <div className="transfer-money-container" >
 		          <header className="transfer-money-header">
 			          <img src="../../assets/icons/arrows.png" alt="Transfer Money Icon" />
-			          <h2>Make a Transfer</h2>
+			          <span>Make a Transfer</span>
 		          </header>
 
 		          <form className="transfer-money-form" onSubmit={this._openModal.bind(this)} >
