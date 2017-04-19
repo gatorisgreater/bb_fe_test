@@ -76,6 +76,7 @@ class TransferMoney extends React.Component {
 
 		const { modalOpen, merchant, transferAmount } = this.state;
 
+	{/*disables Submit button until both input fields have information */}
 		const isEnabled = 
 			merchant.length > 0 &&
 			transferAmount > 0;
