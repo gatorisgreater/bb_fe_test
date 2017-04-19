@@ -48,10 +48,15 @@ As a user I should be able to view recent transactions as shown in the UI Design
 ### Requirements/Installation
 
 1. Install package dependencies using preferred package manager.
-2. Run build script
-3. Open in the browser on src/client/index.html
+2. Open in the browser on src/client/index.html
 
-### ROADMAP TO THE FUTURE:
+### Development Notes on v1
+
+* Form validation and accessibility considerations implemented.
+* Unit testing implemented.
+* React with Redux architecture enforces seperation of concerns.
+
+### Development Roadmap for the Future:
 
 * Modal accessibility considerations (focus trap React).
 * Responsive layout.
