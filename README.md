@@ -5,8 +5,7 @@
 Develop an SPA with Transfer Money and Transaction History user experiences.
 
 ### Screenshot
-
-
+![Peachtree Bank SPA](https://github.com/gatorisgreater/bb_fe_test/blob/master/assets/screenshot.PNG "Peachtree Bank SPA")
 
 ### UX - Transfer Money
 
@@ -29,16 +28,16 @@ As a user I should be able to view recent transactions as shown in the UI Design
 
 * Jest - React Testing Framework
 
-    ├ src
-    ├── client
-    │ └── app: React App
-    │ 	└── actions
-    │ 	└── components
-    │ 	└── reducers        
-    │ └── public: build folder   
-    │ └── index.html    
-    │ └── main.css: style-sheet
-    ├ test: unit-testing of each component
+	    ├ src
+	    ├── client
+	    │ └── app: React App
+	    │ 	└── actions
+	    │ 	└── components
+	    │ 	└── reducers        
+	    │ └── public: build folder   
+	    │ └── index.html    
+	    │ └── main.css: style-sheet
+	    ├ test: unit-testing of each component
 
 ### Requirements/Installation
 
