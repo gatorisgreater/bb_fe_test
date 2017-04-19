@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
     	<div>
     		<header className="header-logo">
-	    	<img src="../../assets/logo.jpg" alt="Peachtree Bank Logo" />
+	    	<img className="header-image" src="../../assets/logo.jpg" alt="Peachtree Bank Logo" />
 	    	</header>
 		    	<div className="content">
 		  		<TransferMoney />

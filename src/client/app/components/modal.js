@@ -5,11 +5,9 @@ class Modal extends React.Component {
     const { closeModal, submitTransferAmount, merchant, transferAmount } = this.props;
 
     return (
-      <div className="jumbotron" style={{position: 'absolute', width: '100%', top: 0, left: 0, height: '100%', background: 'gray'}}>
+      <div className="jumbotron" style={{position: 'absolute', width: '100%', top: 0, left: 0, height: 'auto', background: '#D6D2CF'}}>
         
-        <header className="transfer-preview-header">Transfer Preview</header>
-        <h2 className="transfer-preview-declaration">Press the "Transfer" button below to confirm your transfer of ${transferAmount} to {merchant}.
-        </h2>
+        <header className="transfer-preview-header">Press the "Transfer" button below to confirm your transfer of ${transferAmount} to {merchant}.</header>
         
         <button 
           className="cancel-button" onClick={closeModal}>Cancel

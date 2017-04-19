@@ -1,17 +1,16 @@
 import React from 'react';
 
-import moment from 'moment';
-
 export default function Transaction(props) {
 
+     let leftBorderColor = props.categoryCode;
+
 	return(
-		<div className="transaction-container">
-               <span> {props.categoryCode} </span>
-               <span> {props.transactionDate} </span>
+		<div className="transaction-container" style={{borderLeft: leftBorderColor, borderStyle: "solid"}} >
+               <span className="transaction-date"> {props.transactionDate} </span>
                <img className="transaction-image" src={props.merchantLogo} alt="Merchant Logo" />
-               <span> {props.merchant}</span>
-               <span> {props.transactionType} </span>
-               <span> -${props.amount} </span>
+               <span className="transaction-merchant"> {props.merchant}</span>
+               <span className="transaction-type"> {props.transactionType} </span>
+               <span className="transaction-amount"> -${props.amount} </span>
 		</div>
 	)
 }

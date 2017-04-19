@@ -31,12 +31,7 @@ class TransferMoney extends React.Component {
 	submitTransferAmount(event) {
 		event.preventDefault();
 		let date = moment().format('MMM D');
-
 		this.props.dispatch(actions.transferMoney(this.state.merchant, this.state.transferAmount, date))
-		console.log(event);
-		console.log(date);
-		console.log(this.state.merchant);
-		console.log(this.state.transferAmount);	
 		this.setState({modalOpen: false});			
 	}
 
@@ -62,26 +57,26 @@ class TransferMoney extends React.Component {
 			return (
 		        <div className="transfer-money-container" >
 		          <header className="transfer-money-header">
-			          <img src="../../assets/icons/arrows.png" alt="Transfer Money Icon" />
-			          <span>Make a Transfer</span>
+			          <img className="transfer-money-image" src="../../assets/icons/arrows.png" alt="Transfer Money Icon" />
+			          <span className="transfer-money-title">Make a Transfer</span>
 		          </header>
 
 		          <form className="transfer-money-form" onSubmit={this._openModal.bind(this)} >
 			          <div className="from-account">
-				          <label htmlFor="from-account">FROM ACCOUNT</label>
-				          <select id="from-account" disabled>
+				          <label htmlFor="from-account" className="from-account-label">FROM ACCOUNT</label>
+				          <select id="from-account" className="from-account-select-menu" disabled>
 				          <option>Free Checking(4692) - Available ${availableBalance}</option>
 				          </select>
 				      </div>
 				      
 				      <div className="to-account">
-				          <label htmlFor="to-account">TO ACCOUNT</label>
-				          <input id="to-account" type="text" placeholder="Georgia Power Electric Company" value={this.state.merchant} onChange={this.handleMerchantChange} required />
+				          <label htmlFor="to-account" className="to-account-label">TO ACCOUNT</label>
+				          <input id="to-account" className="to-account-input" type="text" placeholder="Georgia Power Electric Company" value={this.state.merchant} onChange={this.handleMerchantChange} required />
 			          </div>
 
 			          <div className="transfer-amount">
-				          <label htmlFor="transfer-amount">AMOUNT</label>
-				          <input id="transfer-amount" type="number" placeholder="$0.00" value={this.state.transerAmount} onChange={this.handleTransferChange} required />
+				          <label htmlFor="transfer-amount" className="transfer-amount-label">AMOUNT</label>
+				          <input id="transfer-amount" className="transfer-amount-input" type="number" placeholder="$ 0.00" value={this.state.transerAmount} onChange={this.handleTransferChange} required />
 			          </div>
 			          
 			          <button className="submit-button" type="submit" name="submit transfer money" value="SUBMIT" disabled={!isEnabled} >SUBMIT </button>
