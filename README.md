@@ -32,9 +32,11 @@ As a user I should be able to view recent transactions as shown in the UI Design
 
 * Jest - React Testing Framework
 
+* Babel - JS transpiler, browser compatability
+
 	    ├ src
-	    ├── client
-	    │ └── app: React App
+	    ├── client: React + Redux
+	    │ └── app: 
 	    │ 	└── actions
 	    │ 	└── components
 	    │ 	└── reducers        

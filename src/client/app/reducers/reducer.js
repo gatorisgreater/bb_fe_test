@@ -49,7 +49,7 @@ export default function transferReducer (state=initialState, action) {
 		let merchant = action.merchant;
 		let date = action.date;
 
-		/* example transfer payload with default categoryCode, merchantLogo, and transactionType values */
+		/* example transfer payload with default values for categoryCode, merchantLogo, and transactionType*/
 		let transfer = [{
 			categoryCode: "#FFFF00",
 			transactionDate: date,
