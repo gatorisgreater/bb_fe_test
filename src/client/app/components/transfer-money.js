@@ -29,7 +29,7 @@ class TransferMoney extends React.Component {
 		this.setState({ transferAmount: event.target.value});
 	}
 
-	/* generates today's date in specified format and opens transfer preview modal */
+	/* dispatches transfer money action, generates today's date in spec format and opens transfer preview modal */
 	submitTransferAmount(event) {
 		event.preventDefault();
 

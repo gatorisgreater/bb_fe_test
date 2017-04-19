@@ -26,7 +26,7 @@ As a user I should be able to view recent transactions as shown in the UI Design
 
 ### Tech Stack:
 
-* React - Front End Framework
+* React - Front End Frameworkgit stat
 
 * Redux - MVC Architectural Pattern
 
