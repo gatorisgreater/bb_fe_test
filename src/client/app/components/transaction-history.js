@@ -12,6 +12,7 @@ class TransactionHistory extends React.Component {
     
     render() {
 
+      /* iterates over transactions.json file to individually render each transaction */
       const transactionHistory = this.props.transactionHistory.map((transaction, index) => {
         return <li key={index}>
                        <Transaction categoryCode={transaction.categoryCode} transactionDate={transaction.transactionDate} merchantLogo={transaction.merchantLogo} merchant={transaction.merchant} transactionType={transaction.transactionType} amount={transaction.amount} />

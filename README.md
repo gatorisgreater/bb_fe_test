@@ -4,6 +4,10 @@
 
 Develop an SPA with Transfer Money and Transaction History user experiences.
 
+### GitHub Repo
+
+https://github.com/gatorisgreater/bb_fe_test
+
 ### Screenshot
 ![Peachtree Bank SPA](https://github.com/gatorisgreater/bb_fe_test/blob/master/assets/screenshot.PNG "Peachtree Bank SPA")
 
@@ -42,8 +46,10 @@ As a user I should be able to view recent transactions as shown in the UI Design
 ### Requirements/Installation
 
 1. Install package dependencies using preferred package manager.
-2. Run in the browser on src/client/index.html
+2. Run build script
+3. Open in the browser on src/client/index.html
 
 ### ROADMAP TO THE FUTURE:
 
 * Modal accessibility considerations (focus trap React).
+* Responsive layout.

@@ -2,7 +2,6 @@ import React from 'react';
 import Modal from './modal';
 
 import {connect} from 'react-redux';
-import moment from 'moment';
 
 import * as actions from '../actions/actions';
 
@@ -20,26 +19,55 @@ class TransferMoney extends React.Component {
 		};
 	}
 
+	/* updates component state for TO ACCOUNT input data entry */
 	handleMerchantChange(event) {
 		this.setState({ merchant: event.target.value});
 	}
 
+	/* updates component state for AMOUNT input data entry */	
 	handleTransferChange(event) {
 		this.setState({ transferAmount: event.target.value});
 	}
 
+	/* generates today's date in specified format and opens transfer preview modal */
 	submitTransferAmount(event) {
 		event.preventDefault();
-		let date = moment().format('MMM D');
-		this.props.dispatch(actions.transferMoney(this.state.merchant, this.state.transferAmount, date))
+
+		function dateGenerator() {
+			let today = new Date();
+			let day = today.getDate();
+			let month = today.getMonth()+1;
+			let monthIndex = month - 1;
+			let monthNames = [
+			    "Jan", "Feb", "Mah",
+			    "Apr", "May", "Jun", "Jul",
+			    "Aug", "Sep", "Oct",
+			    "Nov", "Dec"
+			  ];
+
+			if(day<10) {
+			    day='0'+day;
+			} 
+
+			if(month<10) {
+			    month='0'+month;
+			} 
+
+			return monthNames[monthIndex] + " " + day;
+		};
+
+		let today = dateGenerator();
+		this.props.dispatch(actions.transferMoney(this.state.merchant, this.state.transferAmount, today))
 		this.setState({modalOpen: false});			
 	}
 
+	/* opens transfer preview modal */
 	_openModal(event) {
 	  	event.preventDefault();
     	this.setState({modalOpen: true});
   	}
 
+	/* closes transfer preview modal */
   	_closeModal() {
     	this.setState({modalOpen: false});
   	}
@@ -81,7 +109,7 @@ class TransferMoney extends React.Component {
 			          
 			          <button className="submit-button" type="submit" name="submit transfer money" value="SUBMIT" disabled={!isEnabled} >SUBMIT </button>
 
-			           {/* Only show Modal when "this.state.modalOpen === true" */}
+			           {/* Shows Modal when "this.state.modalOpen === true" */}
 				        {modalOpen 
 				          ? <Modal submitTransferAmount={this.submitTransferAmount} closeModal={this._closeModal.bind(this)} merchant={merchant} transferAmount={transferAmount} />
 				          : ''}
